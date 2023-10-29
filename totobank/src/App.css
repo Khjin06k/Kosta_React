@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+}
+
+.section0 {
+  position: absolute;
+  font-weight: bold;
+  left:10%;
+  color: black;
+  text-align: left;
+}
+
+.section0_title {
+  font-size: 49px;
+  top:20%; 
+  line-height: 1.4;
+}
+
+.section0_sub1 {
+  top:35%; 
+  font-size: 17px;
+  line-height: 1.95;
+  opacity: .7;
+}
+
+.section0_sub2 {
+  top:45%; 
+  font-size: 17px;
+  line-height: 1.95;
+  opacity: .7;
+}
+
+.section_left, .section_right {
+  display: inline-block;
+  width: 50%;
+  height: 720px;
+}
+
+.imgBox {
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.textBox {
+  text-align: left;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.attachRight{
+  float:right;
+}
+
+.attachLeft{
+  float:left;
+}
+
+
+.L-text {
+  display: block;
+  font-size: xx-large;
+  font-weight: bold;
+}
+.S-text {
+  display: block;
+  padding-top: 30px;
+  font-size: small;
+  color: darkgray;
+}
+
+.bar{
+  width: 100%;
+  height: 20px;
+  background-color: ghostwhite;
+}
+
+.componentBox{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.componentBox:hover{
+  background-color: skyblue;
+  color: aliceblue;
+}
+
+.carousel{
+  width:300px;
+  height:500px;
+  margin:20px auto;
+}

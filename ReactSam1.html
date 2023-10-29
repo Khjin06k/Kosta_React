@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <!-- url을 이용해서 연결하는 것을 CDN이라고 함 -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="mydiv"></div>
+
+        <script type="text/babel">
+            // 함수 혹은 컴포넌트 둘 다 사용 가능
+            // 변수와 디자인을 가지고 있음
+            // 함수가 아닌 리액트의 컴포넌트
+            // 자바스크립트의 함수/클래스와 동일하게 생겼지만 다른점은 html을 가지고 있음
+            // 하나의 화면 내에서 일부를 묶어서 하나의 컴포넌트로 쪼개서 만들 수 있기 때문에 컴포넌트라고 함
+            // 컴포넌트를 정의
+            function Hello(){
+                return <h1>Hello React! </h1>
+            }
+
+            const container = document.getElementById('mydiv');
+            // 리액트 실행을 위해서는 ReactDom을 사용해야 함
+            // container를 가지고와서 ReactDomdmf 이용해 리액트 생성
+            const root = ReactDOM.createRoot(container);
+            // 지정한 div에 <Hello/> 컴포넌트를 렌더링함
+            // 컴포넌트를 생성
+            root.render(<Hello/>)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+#logo{
+    font-size:x-large;
+    color:white;
+    margin-right: 100px;
+}
+
+.nav-items{
+    margin: 0;
+    float: left;
+}
+
+.nav-item{
+    display: inline-block;
+    height: 70px;
+    padding:0 10px;
+    text-align: center;
+    min-width: 80px;
+    margin:0 10px;
+    line-height: 80px;
+}
+
+.nav-item > a {
+    font-size:medium;
+    text-decoration: none;
+    color:white;
+    font-weight: 700;
+}
+
+ul.pagination li a{
+    display: inline-block;
+    border: 1px solid #28a745;
+    background-color: #28a745;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+  }
+

@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import MyReducer from './MyReducer';
+import ReducerEx1 from './ReducerEx1';
 
 function App() {
   return (
     <div className="App">
-      <MyReducer/>
+      <ReducerEx1/>
     </div>
   );
 }

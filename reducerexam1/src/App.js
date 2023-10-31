@@ -4,6 +4,12 @@ import './App.css';
 // 리액트 자체가 제공하는 reducer
 import { useReducer } from 'react';
 import { useState } from 'react';
+import Counter from './Counter';
+
+// useState 대신에 useReducer를 사용하기는 하지만 useReducer가 리덕스를 대체할 수는 없음
+// 그렇기에 useState를 많이 사용함
+// useReducer는 로컬에서만 사용 가능하고 리덕스는 외부 데이터베이스를 사용한다고 이해하면 됨
+
 
 // reducer : 함수로서 state를 업데이트 하는 역할; state(여러개의 객체를 가지고 있음)/action의 변수를 2개를 가져가 state를 action을 보고 바꿔주는 역할
 // dispatche : state의 변경을 요청하는 역할; action을 가지고 넘어가 어떤것을 어떻게 바꿀지를 요청
@@ -51,6 +57,10 @@ function App() {
       {/*버튼을 클릭할 때 dispatche를 호출하면서 파라미터로 action(type, payload)(1)를 가지고 넘어감*/}
       <button onClick={()=>dispatche({type:'deposit', payload:money})}>입금 </button>
       <button onClick={()=>dispatche({type:'withdraw', payload:money})}>출금 </button>
+
+      <br/><br/><br/>
+
+      <Counter initialCount={0}/>
     </div>
   );
 }

@@ -7,9 +7,9 @@ export const initTodos = [
     },
     {
         id:12,
-        title:'Todo12',
+        title:'Todo2',
         count : 0,
-        complete:false
+        complete:true
     },
     {
         id:3,
@@ -51,9 +51,3 @@ export const reducer = (state,action) =>{
         default: return state;
     }
 }
-
-const MyReducer = () => {
-    
-}
-
-export default MyReducer;

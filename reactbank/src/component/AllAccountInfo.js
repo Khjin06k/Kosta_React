@@ -1,6 +1,22 @@
 import {Table, Card, CardBody} from 'reactstrap';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 function AllAccountInfo(){
+    const [accountList, setAccountList] = useState([]);
+    useEffect(
+        ()=>{
+            axios.get("http://localhost:8080/allAccountInfo")
+            .then(res=>{
+                console.log(res.data)
+                setAccountList([...res.data]);
+            })
+            .catch(err=>{
+                console.log(err.data);
+            })
+        },[]
+    )
+
     return(
         <div>
             <Card style={{width:"600px", margin:"20px auto"}}>
@@ -15,41 +31,17 @@ function AllAccountInfo(){
                         <th>등급</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1001</td>
-                            <td>홍길동</td>
-                            <td>100000</td>
-                            <td>normal</td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td>1002</td>
-                            <td>김길동</td>
-                            <td>200000</td>
-                            <td>special</td>
-                            <td>VIP</td>
-                        </tr>
-                        <tr>
-                            <td>1003</td>
-                            <td>고길동</td>
-                            <td>300000</td>
-                            <td>special</td>
-                            <td>GOLD</td>
-                        </tr>
-                        <tr>
-                            <td>1004</td>
-                            <td>하길동</td>
-                            <td>400000</td>
-                            <td>normal</td>
-                            <td> </td>
-                        </tr>
-                        <tr>
-                            <td>1005</td>
-                            <td>장길동</td>
-                            <td>500000</td>
-                            <td>special</td>
-                            <td>SILVER</td>
-                        </tr>
+                         {
+                        accountList.map(acc=> {
+                            return(<tr key={acc.id}>
+                                <td>{acc.id}</td>
+                                <td>{acc.name}</td>
+                                <td>{acc.balance}</td>
+                                <td>{acc.type}</td>
+                                <td>{acc.grade}</td>
+                            </tr>)
+                        })
+                    }        
                     </tbody>
                     </Table>
                 </CardBody>

@@ -7,10 +7,10 @@ const BoardNav = () =>{
         <div style={style}>
            <ul className='nav-items'>
             <li className="nav-item">
-                <Link to={"/boardList"} id="logo"><i>toto<b>bank</b></i></Link>
+                <Link to={"/"} id="logo"><i>toto<b>bank</b></i></Link>
             </li>
             <li className="nav-item">
-                <Link to={"/boardList"}>전체 게시판</Link>
+                <Link to={"/1"}>전체 게시판</Link>
             </li>
             <li className="nav-item">
                 <Link to={"/register"}>게시글 등록</Link>

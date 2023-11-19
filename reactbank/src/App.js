@@ -6,25 +6,37 @@ import AllAccountInfo from './component/AllAccountInfo';
 import Deposit from './component/Deposit';
 import Withdraw from './component/Withdraw';
 import BankNav from './component/BankNav';
-import {Route, Routes} from 'react-router-dom';
+import Login from './component/Login';
+import Join from './component/Join';
 
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
+import store from './Persist_store';
+import Logout from './component/Logout';
+
+export const persister = persistStore(store); // 사용해야 해서 export 진행하고, 로그아웃 시 App에 있는 persistor을 임폴트 진행
 function App() {
   return (
     <div className="App">
-      <BankNav/>
-      {/* 변경되는 부분을 Route를 감싸주면 됨
-      path는 nav 안에서의 path를 의미하며, 프론트에서의 루트를 의미
-      이를 연결할 곳에서 import Link를 통해 아래 path를 이용하면 연결이 가능
-      exact를 사용할 경우 하위 경로를 포함하지 않는 정확한 경로 설정을 원할 경우 exact를 사용하면 됨
-      */}
-      <Routes>
-          <Route exact path="/" element={<MakeAccount/>}/>
-          <Route exact path="/accountInfo" element={<AccountInfo/>}/>
-          <Route exact path="/deposit" element={<Deposit/>}/>
-          <Route exact path="/withdraw" element={<Withdraw/>}/>
-          <Route exact path="/allAccountInfo" element={<AllAccountInfo/>}/>
-      </Routes>
-      
+      <Provider store={store}>
+        <PersistGate persistor={persister}>
+          <BrowserRouter>
+            <BankNav />
+            <Routes>
+              <Route exact path='/login' element={<Login />} />
+              <Route exact path='/logout' element={<Logout />} />
+              <Route exact path='/join' element={<Join />} />
+              <Route exact path="/" element={<MakeAccount />} />
+              <Route exact path="/accountInfo" element={<AccountInfo />} />
+              <Route exact path="/deposit" element={<Deposit />} />
+              <Route exact path="/withdraw" element={<Withdraw />} />
+              <Route exact path="/allAccountInfo" element={<AllAccountInfo />} />
+            </Routes>
+          </BrowserRouter>
+        </PersistGate>
+      </Provider>
     </div>
   );
 }
